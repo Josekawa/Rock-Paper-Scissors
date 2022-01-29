@@ -1,5 +1,5 @@
 const computerPlay = () => {
-    let options = ['rock','paper','scissors'];
+    const options = ['rock','paper','scissors'];
     return options[Math.floor(Math.random() * options.length)];
 } // function that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
 
@@ -9,24 +9,33 @@ const computerPlay = () => {
 //  The function should take two parameters - the playerSelection and computerSelection - 
 //  and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
 const playRound = () => {
-    let playerSelection = "rock";
-    let computerSelection = computerPlay();
     if (playerSelection === computerSelection){
         return "try again";
-    }else if(computerSelection === 'scissors'){
+    }else if((computerSelection === 'scissors' && playerSelection === 'rock') 
+            || (computerSelection === 'rock' && playerSelection === 'paper')
+            || (computerSelection === 'paper' && playerSelection === 'scissors')){
         return "you won";
-    }else{
+    }else if((computerSelection === 'rock' && playerSelection === 'scissors') 
+            || (computerSelection === 'scissors' && playerSelection === 'paper') 
+            || (computerSelection === 'paper' && playerSelection === 'rock')){
         return 'you lose';
-    }
-  }
+    }else{
+        return 'what the fuck you did there?'
+    };
+  };
 
   //the final showdown
 
+    let playerSelection = 'rock';
+    let computerSelection = computerPlay();
+
+    
 const game = () =>{
 
     for (let i = 0; i < 5; i++) {
-        return playRound(i);
-    }
-}
+        return playRound();
+    };
+};
 
-  
+
+
