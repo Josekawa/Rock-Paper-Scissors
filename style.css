@@ -1,6 +1,129 @@
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    nav { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #80FFDB;
+        height: 15vh;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+    }
+
+    nav img {
+        width: 4em;
+        padding: 1em;
+    }
+
+    nav ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        justify-content: space-evenly;
+        flex-grow: 0.3;
+        list-style-type: none;
+    }
+
+
+    ul li{
+        border-style: solid;
+        border-color: darkblue;
+    }
+    ul a {
+        text-decoration: none;
+        color: #FAFAFA;
+        padding: 14px 16px;
+        font-family: fantasy;
+        font-size: 2em;
+    }
+
+    ul li:hover{
+        background-color: tomato;
+        border-color: #FAFAFA;
+        box-shadow: 0.3em 0.3em  tomato;
+    }
+
+    ul li:focus{
+        background-color: tomato;
+        border-color: black;
+        box-shadow: 0.3em 0.3em  tomato;
+    }
+    ul a:hover{
+        color: black;
+    }
+
+    ul a:active{
+        color: #FAFAFA;
+    }
+
+    ul li:active{
+        background-color: black;
+        box-shadow: 0.3em 0.3em  black;
+    }
+
+    .wrapper{
+        background-image: url("/Rock-Paper-Scissors/src/img/background.jpg");
+        background-size: 70vh;
+    }
+
+    .game, .other, .about{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .player{
+        grid-area: player;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button{
+        font-family: fantasy;
+        background-color: #80FFDB;
+        padding: 1em 1em;
+        border-radius: 0.5em;
+        border: none;
+        font-size: 1.2em;
+        box-shadow: 0.3em 0.3em  #64dfdf;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+
+    button:active{
+        color: rgb(40, 41, 41);
+        background-color: #75e0c2;
+        box-shadow: 0.3em 0.2em  #388888;
+        transform: translateY(0.4em) translateX(0.4em);
+    }
+
+    .computer{
+        grid-area: computer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .score{
+        grid-area: score;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-container{
+        height: 50vh;
+        width: 50%;
+        display: grid;
+        grid-template-areas: 
+        ". . ."
+        "player  score computer "
+        ". . .";
+        }
